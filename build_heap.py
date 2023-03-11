@@ -1,6 +1,6 @@
 # python3
 
-def min_h(data,i,n,swaps):
+def min_h(data,i,n,s):
 
     smallest=i
     left=2*i+1
@@ -14,19 +14,18 @@ def min_h(data,i,n,swaps):
         
     if smallest != i:
         data[i], data[smallest] = data[smallest], data[i]
-        swap=[i,smallest]
-        swaps.append(swap)
-        min_h(data, smallest, n,swaps)
+        s=[i,smallest]
+        min_h(data, smallest, n,s)
 
-    return swaps
+    return s
 
 
 def build_heap(data,n):
     swaps = []
-
+    s=[]
 
     for i in range(n//2, -1, -1):
-        swaps=min_h(data, i, n,swaps)
+        swaps.append(min_h(data, i, n,s))
 
     return swaps
 
