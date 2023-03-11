@@ -14,7 +14,7 @@ def min_h(data,i,n,s):
         
     if smallest != i:
         data[i], data[smallest] = data[smallest], data[i]
-        s=[i,smallest]
+        s.append([i,smallest])
         min_h(data, smallest, n,s)
 
     return s
@@ -25,8 +25,11 @@ def build_heap(data,n):
     s=[]
 
     for i in range(n//2, -1, -1):
-        swaps.append(min_h(data, i, n,s))
+        swaps=min_h(data, i, n,s)
+        
+        
 
+    
     return swaps
 
 
@@ -71,7 +74,7 @@ def main():
         for i, j in swaps:
             print(i, j)
 
-        file.close() 
+        
    
 
 if __name__ == "__main__":
