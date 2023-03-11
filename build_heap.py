@@ -37,7 +37,7 @@ def main():
     text2=input()
 
     if(text.startswith("F")):
-        filename=text2
+        filename="tests/"+text2
         if(filename.endswith("a")):return
 
         file=open(filename,"r")
