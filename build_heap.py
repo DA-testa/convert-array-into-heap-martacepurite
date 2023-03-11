@@ -14,7 +14,7 @@ def min_h(data,i,n,swaps):
         
     if smallest != i:
         data[i], data[smallest] = data[smallest], data[i]
-        swap=str(i)+str(smallest)
+        swap=[i,smallest]
         swaps.append(swap)
         min_h(data, smallest, n,swaps)
 
