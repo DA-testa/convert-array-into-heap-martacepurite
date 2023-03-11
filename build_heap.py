@@ -43,7 +43,7 @@ def main():
         file=open(filename,"r")
         n=int(file.readline())
         
-        data = list(map(int, input().split()))
+        data = list(map(int, file.readline().split()))
 
         assert len(data) == n
 
@@ -53,6 +53,8 @@ def main():
 
         for i, j in swaps:
             print(i, j)
+
+        file.close()
 
         
 
@@ -69,6 +71,8 @@ def main():
         
         for i, j in swaps:
             print(i, j)
+
+        file.close() 
    
 
 if __name__ == "__main__":
